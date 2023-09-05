@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './scss/app.scss';
+import pizzas from './assets/pizzas.json';
 
 import Header from './components/Header';
 import Categories from './components/Categories';
@@ -18,11 +19,9 @@ function App() {
           </div>
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
-            <PizzaBlock title="Мексиканская" price="250" />
-            <PizzaBlock title="Американская" price="350" />
-            <PizzaBlock title="Охотничья" price="110" />
-            <PizzaBlock title="Острая" price={2150} />
-            <PizzaBlock title="Гавайская" price={5100} />
+            {pizzas.map((obj) => (
+              <PizzaBlock {...obj} />
+            ))}
           </div>
         </div>
       </div>
